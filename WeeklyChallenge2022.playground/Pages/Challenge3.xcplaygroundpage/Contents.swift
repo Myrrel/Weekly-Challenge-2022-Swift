@@ -38,3 +38,29 @@ func isPrime(number: Int) -> Bool {
         print(number)
     }
 }
+
+// la mia
+func esPrimo (_ num: Int ) -> Bool {
+    if num < 2 {
+        return false
+    } else if num == 2 {
+        return true
+    } else if num > 2 {
+        var sum = 0
+        for i in 2...num {
+            if num % i == 0 {
+                sum += 1
+            }
+        }
+        return sum == 1
+    } else {
+        return true
+    }
+}
+
+
+for i in 1...100 {
+  if esPrimo(i) {
+    print(i)
+  }
+}

@@ -44,3 +44,36 @@ func countWords(text: String) {
 }
 
 countWords(text: "Hola, mi nombre es brais. Mi nombre completo es Brais Moure (MoureDev).")
+
+
+// lo mio
+
+print("\n===================================\n")
+
+func cuentaPalabras(from frase: String) -> Void {
+    var frase2 = ""
+    for i in 0..<frase.count {
+        let un = frase.index(frase.startIndex, offsetBy: i)
+        frase2 += frase[un] == "," || frase[un] == "." || frase[un] == ")" || frase[un] == "("   ? " " : String(frase[un])
+    }
+
+    frase2 = frase2.lowercased()
+
+    var res = frase2.split(separator: " ")
+    res.sort()
+
+    var index = 0
+    var acumula = 0
+    for i in 0..<res.count {
+        if res[index] == res[i] {
+            acumula+=1
+        } else {
+            print("\(res[index]) = \(acumula)")
+            acumula = 1
+            index = i
+        }
+    }
+    print("\(res[index]) = \(acumula) ")
+}
+
+cuentaPalabras(from: "Hola, mi nombre es brais. Mi nombre completo es Brais Moure (MoureDev)." )

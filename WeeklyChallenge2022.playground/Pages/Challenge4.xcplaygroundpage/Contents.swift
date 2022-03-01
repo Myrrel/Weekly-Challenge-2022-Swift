@@ -73,3 +73,41 @@ func area(polygon: Polygon) -> Double {
     polygon.printArea()
     return polygon.area()
 }
+
+
+// la mia
+
+enum TipoPoligono {
+    case TRIANGULO, CUADRADO, RECTANGULO
+}
+
+struct PoligonoRegular {
+    
+    var base1: Int? = nil
+    var altura: Int? = nil
+    var lado: Int? = nil
+    var tipoPoligono: TipoPoligono
+}
+
+
+let triangulo = PoligonoRegular( base1: 4,altura: 5,tipoPoligono: TipoPoligono.TRIANGULO)
+let rectangulo = PoligonoRegular( base1: 4,altura: 5, tipoPoligono: TipoPoligono.RECTANGULO)
+let cuadrado = PoligonoRegular( lado: 6,tipoPoligono: TipoPoligono.CUADRADO)
+
+
+func areaPoligono (_ poligono: PoligonoRegular) -> Double {
+    
+    switch poligono.tipoPoligono {
+        case TipoPoligono.TRIANGULO:
+            return Double(( poligono.altura! * poligono.base1! ) / 2)
+        case TipoPoligono.CUADRADO:
+            return Double(( poligono.lado! * poligono.lado! ))
+        case TipoPoligono.RECTANGULO:
+            return Double(( poligono.altura! * poligono.base1! ))
+    }
+    
+}
+
+print("Area Triangulo \(areaPoligono(triangulo))")
+print("Area Cuadrado \(areaPoligono(cuadrado))")
+print("Area Rectangulo \(areaPoligono(rectangulo))")

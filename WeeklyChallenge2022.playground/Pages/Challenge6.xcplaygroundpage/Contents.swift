@@ -43,3 +43,13 @@ func recursiveReverse(text: String, index: Int = 0, reversedText: String = "") -
     }
     return newReversedText
 }
+
+
+// mi aporte
+let frase = "Hola mundo"
+
+var frase2 = ""
+frase.forEach({ caracter in
+  frase2 = String(caracter) + frase2
+  print(frase2)
+})

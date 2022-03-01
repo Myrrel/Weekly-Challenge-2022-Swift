@@ -29,3 +29,29 @@ var n1 = 1
     n0 = n1
     n1 = fib
 }
+
+
+//  mi solucion
+
+var a = 0
+var b = 1
+print("1: \(a)")
+print("2: \(b)")
+var c = 0
+for i in 3...50 {
+ c = a + b
+ print("\(i): \(c)")
+ a = b
+ b = c
+}
+
+ // otra solucion
+var a1 = 0
+var b1 = 1
+
+for i in 1...50 {
+ let c1 = a1 + b1
+ print("\(i): \(a1)")
+ a1 = b1
+ b1 = c1
+}

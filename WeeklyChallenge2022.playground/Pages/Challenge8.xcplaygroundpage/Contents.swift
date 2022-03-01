@@ -16,3 +16,21 @@ import Foundation
  * - Subiré una posible solución al ejercicio el lunes siguiente al de su publicación.
  *
  */
+
+func conversion(numero: Int,base: Int) -> String {
+    var cociente = numero
+    var resto = cociente
+    
+    var pal = ""
+    while cociente > 1  {
+        resto = cociente % base
+        cociente /= base
+        pal = String(resto) + pal
+    }
+    pal = String(cociente) + pal
+    return pal
+}
+
+(1...10).forEach({ elem in
+    print(conversion(numero: elem, base: 2))
+})

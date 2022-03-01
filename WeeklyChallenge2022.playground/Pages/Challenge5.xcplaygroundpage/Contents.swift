@@ -49,3 +49,9 @@ if let ratio = aspectRationStr {
 } else {
     print("No se ha podido calcular el aspect ratio")
 }
+
+let urlImage = NSURL(string: "https://raw.githubusercontent.com/mouredev/mouredev/master/mouredev_github_profile.png")
+var data:NSData = try! NSData(contentsOf: urlImage! as URL)
+
+let image = UIImage(data: data as Data)
+print("ratio: \(image!.size.width) / \(image!.size.height) ")
